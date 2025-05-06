@@ -1,0 +1,9 @@
+server/venv/
+server/__pycache__/
+server/.env
+server/*.pyc
+server/logfile
+
+client/node_modules/
+client/.next/
+client/.env
