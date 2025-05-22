@@ -4,7 +4,6 @@ from flask_jwt_extended import JWTManager, create_access_token
 from models import db, User
 from config import Config
 import re, bcrypt
-import uuid
 
 
 app = Flask(__name__)
@@ -61,16 +60,16 @@ def login():
   if not user or not bcrypt.checkpw(password.encode(), user.password):
     return jsonify({"error": "Identifiants invalides"}), 401
   
-  access_token = create_access_token(identity=email)
-  return jsonify({"token": access_token}), 200
+  access_token = create_access_token(identity= {"email": user.email, "role": user.role})
+  return jsonify({"token": access_token, "role": user.role}), 200
 
 
 if __name__ == "__main__":
-    print("▶ Démarrage de l'application Flask...")
+    print("Démarrage de l'application Flask...")
     with app.app_context():
         db.create_all()
-        print("✅ Tables créées avec succès")
-    print("✅ app.run() devrait se lancer maintenant")
+        print("Tables créées avec succès")
+    print("app.run() devrait se lancer maintenant")
     app.run(host="0.0.0.0", debug=True, port=5050)
 
 

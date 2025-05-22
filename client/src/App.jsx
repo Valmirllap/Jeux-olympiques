@@ -1,16 +1,22 @@
-
-import Header from './Component/Header';
 import './App.css'
-import Footer from './Component/Footer';
+import Layout from './pages/UI/Layout';
+import Home from './pages/Home';
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Ticketing from './pages/Ticketing';
+import Login from './pages/Login';
 // import axios from "axios";
 
 function App() {
   return (
-    <div>
-      <Header/>
-      <main></main>
-      <Footer/>
-    </div>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route element={<Home/>} path='/' />
+          <Route element={<Ticketing/>} path='/ticketing'/>
+          <Route element={<Login/>} path='/login' />
+        </Routes>
+      </Layout>
+    </Router>
   )
 }
 

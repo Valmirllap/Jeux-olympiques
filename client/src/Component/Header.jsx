@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <HeaderContainer>
       <Nav>
-        <Logo href="/">Jeux olympiques</Logo>
+        <Logo href="/">Jeux Olympiques</Logo>
         <NavLinks>
           <NavLink href="/">Home</NavLink>
           <NavLink href="/ticketing">Ticketing</NavLink>

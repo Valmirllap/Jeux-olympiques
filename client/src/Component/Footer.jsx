@@ -43,7 +43,7 @@ export default function Footer() {
 const FooterContainer = styled.footer`
   background-color: #f3f4f6;
   color: #4b5563;
-  padding: 2rem 1.5rem;
+  padding: 1rem 1.5rem;
 `;
 
 const FooterContent = styled.div`
@@ -97,5 +97,5 @@ const FooterBottom = styled.div`
   text-align: center;
   font-size: 0.85rem;
   color: #6b7280;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 `;
